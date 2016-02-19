@@ -3,14 +3,13 @@ require_relative 'spec_helper'
 
 describe "rotated binary sort methods" do
   let(:array) {[11, 12, 13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-  let(:array_right) {[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1, 2]}
   describe "find_pivot" do
     it 'correctly returns pivot location in left half of array' do
       expect(find_pivot(array)).to eq(2)
     end
 
     it 'correctly finds pivot location in right half of array' do
-      expect(find_pivot(array_right)).to eq(10)
+      expect(find_pivot([2,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1])).to eq(11)
     end
 
     it "returns 'No  pivot' if the array is not rotated" do
